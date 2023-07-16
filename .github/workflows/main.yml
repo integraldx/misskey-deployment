@@ -34,5 +34,5 @@ jobs:
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --application-name misskey \
           --deployment-group-name misskey \
-          --gitHubLocation repository=integraldx/misskey-deployment,commitId=${{ github.sha }}
+          --github-location repository=integraldx/misskey-deployment,commitId=${{ github.sha }}
           
