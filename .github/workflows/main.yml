@@ -27,4 +27,12 @@ jobs:
       - name: Upload S3
         run: |
           aws s3 sync . s3://misskey-deployment
+
+      - name: CodeDeploy
+        run: |
+          aws deploy create-deployment \
+          --deployment-config-name CodeDeployDefault.AllAtOnce \
+          --application-name misskey \
+          --deployment-group-name misskey \
+          --gitHubLocation repository=integraldx/misskey-deployment,commitId=${{ github.sha }}
           
