@@ -6,6 +6,10 @@ files:
   - source: /
     destination: /home/ec2-user/misskey-deployment
 
+permissions:
+  - object: scripts
+    pattern: "**"
+
 hooks:
   - AfterInstall: scripts/after_install.sh
   - ApplicationStart: scripts/application_start.sh
