@@ -11,5 +11,10 @@ permissions:
     pattern: "**"
 
 hooks:
-  - AfterInstall: scripts/after_install.sh
-  - ApplicationStart: scripts/application_start.sh
+  AfterInstall: 
+    - location: scripts/after_install.sh
+      timeout: 180
+
+  ApplicationStart: 
+    - location: scripts/application_start.sh
+      timeout: 180
