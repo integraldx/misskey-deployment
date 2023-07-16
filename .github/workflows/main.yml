@@ -9,3 +9,18 @@ jobs:
       - name: Hello world
         run: |
           echo "Hello world!"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup AWS credential
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-2
+      - name: Upload S3
+        run: |
+          aws s3 sync . s3://misskey-deployment
+          
