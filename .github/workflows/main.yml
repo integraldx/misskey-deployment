@@ -24,10 +24,6 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ap-northeast-2
 
-      - name: Upload S3
-        run: |
-          aws s3 sync . s3://misskey-deployment
-
       - name: CodeDeploy
         run: |
           aws deploy create-deployment \
@@ -35,4 +31,3 @@ jobs:
           --application-name misskey \
           --deployment-group-name misskey \
           --github-location repository=integraldx/misskey-deployment,commitId=${{ github.sha }}
-          
