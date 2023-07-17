@@ -1,3 +1,3 @@
 #! /bin/bash
 
-sudo docker run --name nginx -p 80:80 -d nginx
+sudo docker-compose up -f /home/ec2-user/misskey-deployment/docker-compose.yml
