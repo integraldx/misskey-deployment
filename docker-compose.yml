@@ -11,6 +11,7 @@ services:
     volumes:
       - $HOME/data/certbot/conf:/etc/letsencrypt
       - $HOME/data/certbot/www:/var/www/certbot
+      - ./nginx.conf:/etc/nginx/nginx.conf
 
   certbot:
     container_name: "certbot"
