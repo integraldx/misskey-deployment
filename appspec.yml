@@ -4,17 +4,17 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/misskey-deployment
+    destination: /root/misskey-deployment
 
 permissions:
   - object: scripts
     pattern: "**"
 
 hooks:
-  AfterInstall: 
+  AfterInstall:
     - location: scripts/after_install.sh
       timeout: 180
 
-  ApplicationStart: 
+  ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 180
