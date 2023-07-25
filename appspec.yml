@@ -9,6 +9,7 @@ files:
 permissions:
   - object: scripts
     pattern: "**"
+    mode: 755
 
 hooks:
   AfterInstall:
