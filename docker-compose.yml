@@ -33,3 +33,7 @@ services:
       test: "redis-cli ping"
       interval: 5s
       retries: 20
+
+networks:
+  internal_network:
+    internal: true
